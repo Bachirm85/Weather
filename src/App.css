@@ -1,0 +1,72 @@
+.app {
+  height: 100%;
+  width: 100%;
+  font-family: "Raleway";
+}
+body {
+  background-color: #9ccef4;
+  margin:0px;
+}
+
+.app-navbar {
+  background-color: #759eda;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em;
+}
+
+.app-navbar-input {
+  background-color: #759eda;
+  color: #fff;
+  padding: 0.5em 1em;
+  border: none;
+  outline: none;
+}
+
+.app-navbar-button {
+  background-color: #5879c7;
+  padding: 0.5em 1em;
+  border: none;
+  color: #000;
+}
+
+.app-main {
+  background-color: #9ccef4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-main-weather {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.app-main-weather-description {
+  color: #fff;
+}
+.app-main-weather div {
+  margin: 5px;
+}
+
+.app-main-weather-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.app-main-weather-details div {
+  margin: auto 0.5em;
+}
+
+.app-main-weather-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.app-main-weather-list-weather-element {
+  text-align: center;
+  margin: 1em;
+  width: 5em;
+}
