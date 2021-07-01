@@ -17,7 +17,7 @@ import snow from "./img/weather-icons/snow.svg";
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.state = {weather: null, country:'Beirut' };
+    this.state = {weather: null, country:'Beirut', error:false };
   }
 
   handleCountryChange= async(country)=>{
@@ -28,7 +28,12 @@ class App extends React.Component {
   getWeatherData = async()=>{
     const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${this.state.country}&cnt=8&appid=df85b6dd592e2835a950418e18c09453`)
     const result = await response.json();
-    this.setState({weather: result});
+    if (result.cod==200) {
+      this.setState({weather: result, error: false});
+    }
+    else {
+      this.setState({error:true});
+    }
   }
 
   async componentDidMount(){
@@ -61,7 +66,7 @@ class App extends React.Component {
   return (
     <div className="App">
       <NavBar handleCountryChange={this.handleCountryChange}/>
-
+      {this.state.error && <p>Please insert a right city</p>}
       <main className='app-main'>
         {this.state.weather && ( <>
         <MainWeather 
